@@ -88,7 +88,8 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 15px; /* Rendu buttons madhya gap kosam */
+  margin-left: 15px;
+  /* Rendu buttons madhya gap kosam */
 }
 
 .btn-secondary:hover {
@@ -121,8 +122,9 @@ body {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
 /* Steps Section Styles */
 .steps-section {
   padding: 80px 5%;
@@ -200,13 +202,14 @@ body {
   font-size: 0.9rem;
   color: #888;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 6%;
   background: #ffffff;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -255,7 +258,8 @@ body {
   position: absolute;
   top: -5px;
   right: -8px;
-  background: #ef4444; /* Red color for notification */
+  background: #ef4444;
+  /* Red color for notification */
   color: white;
   font-size: 0.7rem;
   padding: 2px 6px;
@@ -310,7 +314,7 @@ body {
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .image-container {
@@ -360,7 +364,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: 0.2s;
 }
 
@@ -380,9 +384,10 @@ body {
   color: #111;
   margin: 10px 0;
   line-height: 1.4;
-  
+
   /* Line clamp kakunda idi vadhudam */
-  height: 2.8em; /* 2 lines height (1.4 * 2) */
+  height: 2.8em;
+  /* 2 lines height (1.4 * 2) */
   overflow: hidden;
   display: block;
 }
@@ -462,10 +467,14 @@ body {
   padding: 10px 25px;
   width: 100%;
   max-width: 600px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.search-icon { color: #888; margin-right: 15px; }
+.search-icon {
+  color: #888;
+  margin-right: 15px;
+}
+
 .search-box input {
   border: none;
   outline: none;
@@ -481,7 +490,9 @@ body {
   flex-wrap: wrap;
 }
 
-.dropdown-wrapper { position: relative; }
+.dropdown-wrapper {
+  position: relative;
+}
 
 .filter-btn {
   background: white;
@@ -506,7 +517,7 @@ body {
   border-radius: 8px;
   width: 200px;
   z-index: 100;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu div {
@@ -515,7 +526,10 @@ body {
   border-bottom: 1px solid #f9f9f9;
 }
 
-.dropdown-menu div:hover { background: #f3f4f6; color: #1e3a8a; }
+.dropdown-menu div:hover {
+  background: #f3f4f6;
+  color: #1e3a8a;
+}
 
 .price-filter-container {
   background: white;
@@ -526,8 +540,17 @@ body {
   flex-direction: column;
 }
 
-.price-label { font-size: 12px; font-weight: bold; color: #1e3a8a; margin-bottom: 5px; }
-.price-slider { cursor: pointer; accent-color: #1e3a8a; }
+.price-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 5px;
+}
+
+.price-slider {
+  cursor: pointer;
+  accent-color: #1e3a8a;
+}
 
 /* Slider styling */
 .price-slider {
@@ -545,8 +568,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Category Buttons Styling */
@@ -564,14 +594,16 @@ body {
   border: 1px solid #ddd;
   background: #fff;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth move */
+  transition: all 0.3s ease;
+  /* Smooth move */
 }
 
 .tab-btn.active {
   background: #1e3a8a;
   color: #fff;
   border-color: #1e3a8a;
-  transform: translateY(-2px); /* Clicked effect */
+  transform: translateY(-2px);
+  /* Clicked effect */
 }
 
 /* Filter Buttons Smooth Move */
@@ -619,20 +651,24 @@ body.dark-theme {
 .dark-theme .product-card {
   background-color: #1e293b !important;
   border: 1px solid #334155 !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-.dark-theme .product-title, .dark-theme .current-price {
+.dark-theme .product-title,
+.dark-theme .current-price {
   color: #ffffff !important;
 }
 
 /* Form & Input Fields in Dark Mode */
-.dark-theme form, .dark-theme .dropdown-menu {
+.dark-theme form,
+.dark-theme .dropdown-menu {
   background-color: #1e293b !important;
   color: #fff !important;
 }
 
-.dark-theme input, .dark-theme select, .dark-theme textarea {
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
   background-color: #0f172a !important;
   color: #fff !important;
   border: 1px solid #334155 !important;
@@ -640,15 +676,17 @@ body.dark-theme {
 
 /* Dark Mode for Requested Items Section */
 body.dark-theme .buy-page div[style*="background: rgb(240, 247, 255)"] {
-  background-color: #1e293b !important; /* Blue-Dark Background */
+  background-color: #1e293b !important;
+  /* Blue-Dark Background */
 }
 
 body.dark-theme .buy-page div[style*="background: white"] {
-  background-color: #0f172a !important; /* Card Background */
+  background-color: #0f172a !important;
+  /* Card Background */
   border-color: #334155 !important;
 }
 
-body.dark-theme .buy-page h2, 
+body.dark-theme .buy-page h2,
 body.dark-theme .buy-page h4 {
   color: #ffffff !important;
 }
@@ -665,7 +703,8 @@ body.dark-theme {
 
 /* --- Hero Section Dark Mode --- */
 body.dark-theme .hero {
-  background: #121212 !important; /* తెల్లటి బ్యాక్‌గ్రౌండ్ ని తీసేసి నలుపు రంగు ఇస్తుంది */
+  background: #121212 !important;
+  /* తెల్లటి బ్యాక్‌గ్రౌండ్ ని తీసేసి నలుపు రంగు ఇస్తుంది */
 }
 
 body.dark-theme .hero h1 {
@@ -673,22 +712,27 @@ body.dark-theme .hero h1 {
 }
 
 /* నీకు విజిబుల్ అవ్వని మెయిన్ పారాగ్రాఫ్ ఇక్కడ ఫిక్స్ అవుతుంది */
-body.dark-theme .hero p, 
+body.dark-theme .hero p,
 body.dark-theme .hero-p {
-  color: #cbd5e0 !important; /* Light Grey color for readability */
+  color: #cbd5e0 !important;
+  /* Light Grey color for readability */
 }
 
 /* --- Buttons in Dark Mode --- */
 
 body.dark-theme .btn-primary {
-  background-color: #ffffff !important; /* డార్క్ మోడ్ లో బటన్ తెల్లగా మారుతుంది */
-  color: #000000 !important;          /* టెక్స్ట్ నలుపు రంగులోకి మారుతుంది */
+  background-color: #ffffff !important;
+  /* డార్క్ మోడ్ లో బటన్ తెల్లగా మారుతుంది */
+  color: #000000 !important;
+  /* టెక్స్ట్ నలుపు రంగులోకి మారుతుంది */
   border: none !important;
 }
 
 body.dark-theme .btn-primary:hover {
-  background-color: #e2e8f0 !important; /* హోవర్ చేసినప్పుడు కొంచెం గ్రే కలర్ */
+  background-color: #e2e8f0 !important;
+  /* హోవర్ చేసినప్పుడు కొంచెం గ్రే కలర్ */
 }
+
 body.dark-theme .btn-secondary {
   background-color: transparent !important;
   color: #ffffff !important;
@@ -727,94 +771,103 @@ body.dark-theme .feature-card {
 
 /* 1. Why Section (Features) */
 body.dark-theme .why-section {
-    background-color: #1a202c !important; /* Dark background */
+  background-color: #1a202c !important;
+  /* Dark background */
 }
 
 body.dark-theme .why-section h2 {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 body.dark-theme .feature-card {
-    background-color: #2d3748 !important; /* Darker card */
-    border: 1px solid #4a5568 !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  background-color: #2d3748 !important;
+  /* Darker card */
+  border: 1px solid #4a5568 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
-body.dark-theme .feature-card h3, 
+body.dark-theme .feature-card h3,
 body.dark-theme .feature-card p {
-    color: #ffffff !important; /* టెక్స్ట్ విజిబుల్ అవుతుంది */
+  color: #ffffff !important;
+  /* టెక్స్ట్ విజిబుల్ అవుతుంది */
 }
 
 /* 2. Steps Section (How it Works) */
 body.dark-theme .steps-section {
-    background-color: #121212 !important;
+  background-color: #121212 !important;
 }
 
 body.dark-theme .step-card {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
 }
 
 body.dark-theme .step-card h3,
 body.dark-theme .step-card p {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 body.dark-theme .step-number {
-    color: #ffffff !important;
-    opacity: 0.2 !important; /* నంబర్ వెనకాల లైట్ గా కనిపిస్తుంది */
+  color: #ffffff !important;
+  opacity: 0.2 !important;
+  /* నంబర్ వెనకాల లైట్ గా కనిపిస్తుంది */
 }
 
 /* 3. Marketplace & Product Cards */
 body.dark-theme .marketplace-section {
-    background-color: #121212 !important;
+  background-color: #121212 !important;
 }
 
 body.dark-theme .marketplace-section h2 {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 body.dark-theme .product-card {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
 }
 
 body.dark-theme .product-title {
-    color: #ffffff !important; /* ప్రొడక్ట్ పేరు తెల్లగా కనిపిస్తుంది */
+  color: #ffffff !important;
+  /* ప్రొడక్ట్ పేరు తెల్లగా కనిపిస్తుంది */
 }
 
 body.dark-theme .current-price {
-    color: #63b3ed !important; /* Light blue price for visibility */
+  color: #63b3ed !important;
+  /* Light blue price for visibility */
 }
 
 body.dark-theme .image-container {
-    background-color: #2d3748 !important; /* Image వెనకాల గ్రే కలర్ */
+  background-color: #2d3748 !important;
+  /* Image వెనకాల గ్రే కలర్ */
 }
 
 /* 4. Footer */
 body.dark-theme .footer {
-    background-color: #000000 !important;
-    border-top: 1px solid #333 !important;
+  background-color: #000000 !important;
+  border-top: 1px solid #333 !important;
 }
 
 body.dark-theme .footer-brand h2,
 body.dark-theme .footer-links a,
 body.dark-theme .footer-bottom {
-    color: #cbd5e0 !important;
+  color: #cbd5e0 !important;
 }
 
 /* --- Categories General Styles --- */
 .categories-section {
   margin-top: 100px;
   padding: 60px 20px;
-  background-color: #F9FAFB; /* Light Theme BG */
+  background-color: #F9FAFB;
+  /* Light Theme BG */
   text-align: center;
 }
 
 .categories-title {
   font-size: 32px;
   margin-bottom: 40px;
-  color: #111; /* Light Theme Title */
+  color: #111;
+  /* Light Theme Title */
 }
 
 .categories-grid {
@@ -827,10 +880,11 @@ body.dark-theme .footer-bottom {
 }
 
 .category-card {
-  background-color: #fff; /* Light Theme Card */
+  background-color: #fff;
+  /* Light Theme Card */
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out;
   border: 1px solid #eee;
   cursor: pointer;
@@ -843,7 +897,8 @@ body.dark-theme .footer-bottom {
 
 .category-icon {
   margin-bottom: 15px;
-  color: #1E3A8A; /* Default Blue Icon */
+  color: #1E3A8A;
+  /* Default Blue Icon */
 }
 
 .category-name {
@@ -870,11 +925,12 @@ body.dark-theme .categories-title {
 body.dark-theme .category-card {
   background-color: #1e293b !important;
   border: 1px solid #334155 !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
 body.dark-theme .category-icon {
-  color: #63b3ed !important; /* Light blue icon for dark mode */
+  color: #63b3ed !important;
+  /* Light blue icon for dark mode */
 }
 
 body.dark-theme .category-name {
@@ -891,123 +947,308 @@ body.dark-theme .category-desc {
 
 /* Buy Page Background */
 body.dark-theme .buy-page {
-    background-color: #121212 !important;
+  background-color: #121212 !important;
 }
 
 /* Buy Page Header Title */
 body.dark-theme .buy-header h1 {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 /* Search Container & Box */
 body.dark-theme .search-box {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 body.dark-theme .search-box input {
-    background-color: transparent !important;
-    color: #ffffff !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
 }
 
 body.dark-theme .search-icon {
-    color: #94a3b8 !important; /* Muted silver/grey icon */
+  color: #94a3b8 !important;
+  /* Muted silver/grey icon */
 }
 
 /* Filter Buttons (Condition, Sort by, etc.) */
 body.dark-theme .filter-btn {
-    background-color: #1e293b !important;
-    color: #ffffff !important;
-    border: 1px solid #334155 !important;
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border: 1px solid #334155 !important;
 }
 
 body.dark-theme .filter-btn:hover {
-    background-color: #334155 !important;
+  background-color: #334155 !important;
 }
 
 /* Filter Dropdown Menus */
 body.dark-theme .dropdown-menu {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
 body.dark-theme .dropdown-menu div {
-    color: #ffffff !important;
-    border-bottom: 1px solid #334155 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #334155 !important;
 }
 
 body.dark-theme .dropdown-menu div:hover {
-    background-color: #334155 !important;
-    color: #63b3ed !important; /* Hover effect with light blue */
+  background-color: #334155 !important;
+  color: #63b3ed !important;
+  /* Hover effect with light blue */
 }
 
 /* Price Slider/Filter Container */
 body.dark-theme .price-filter-container {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
 }
 
 body.dark-theme .price-label {
-    color: #63b3ed !important;
+  color: #63b3ed !important;
 }
 
 /* Category Tabs (Books, Electronics, etc.) */
 body.dark-theme .tab-btn {
-    background-color: #1e293b !important;
-    color: #ffffff !important;
-    border: 1px solid #334155 !important;
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border: 1px solid #334155 !important;
 }
 
 body.dark-theme .tab-btn.active {
-    background-color: #1e3a8a !important; /* Dark Blue for Active */
-    border-color: #63b3ed !important;
+  background-color: #1e3a8a !important;
+  /* Dark Blue for Active */
+  border-color: #63b3ed !important;
 }
 
 /* No Results or Error Messages */
 body.dark-theme .no-results-msg {
-    color: #cbd5e0 !important;
+  color: #cbd5e0 !important;
 }
 
 /* --- Search Box Inner Input Fix --- */
 .search-box input {
-    border: none !important;      /* లోపల ఉండే బోర్డర్ తీసేస్తుంది */
-    outline: none !important;     /* క్లిక్ చేసినప్పుడు వచ్చే బ్లూ/బ్లాక్ లైన్ తీసేస్తుంది */
-    background: transparent !important; /* బ్యాక్‌గ్రౌండ్ కలర్ లేకుండా చేస్తుంది */
-    width: 100%;
-    padding: 5px;
+  border: none !important;
+  /* లోపల ఉండే బోర్డర్ తీసేస్తుంది */
+  outline: none !important;
+  /* క్లిక్ చేసినప్పుడు వచ్చే బ్లూ/బ్లాక్ లైన్ తీసేస్తుంది */
+  background: transparent !important;
+  /* బ్యాక్‌గ్రౌండ్ కలర్ లేకుండా చేస్తుంది */
+  width: 100%;
+  padding: 5px;
 }
 
 /* Dark Mode లో సెర్చ్ ఇన్-పుట్ కలర్ */
 body.dark-theme .search-box input {
-    color: #ffffff !important;    /* టైప్ చేసే టెక్స్ట్ తెల్లగా కనిపిస్తుంది */
+  color: #ffffff !important;
+  /* టైప్ చేసే టెక్స్ట్ తెల్లగా కనిపిస్తుంది */
 }
 
 /* ఒకవేళ సెర్చ్ బాక్స్ కి ఫోకస్ వచ్చినప్పుడు బోర్డర్ కావాలనుకుంటే ఇలా మార్చుకోవచ్చు */
 .search-box:focus-within {
-    border: 1px solid #1E3A8A;   /* సెర్చ్ చేస్తున్నప్పుడు మాత్రమే బయట బాక్స్ హైలైట్ అవుతుంది */
+  border: 1px solid #1E3A8A;
+  /* సెర్చ్ చేస్తున్నప్పుడు మాత్రమే బయట బాక్స్ హైలైట్ అవుతుంది */
 }
 
 body.dark-theme .search-box:focus-within {
-    border: 1px solid #63b3ed;   /* డార్క్ మోడ్ ఫోకస్ కలర్ */
+  border: 1px solid #63b3ed;
+  /* డార్క్ మోడ్ ఫోకస్ కలర్ */
 }
 
 /* Sell Page లోని చెక్ బాక్స్ బాక్స్ కి డార్క్ మోడ్ ఫిక్స్ */
-body.dark-theme div[style*="background: rgb(255, 249, 240)"], 
+body.dark-theme div[style*="background: rgb(255, 249, 240)"],
 body.dark-theme div[style*="background: #fff9f0"] {
-    background-color: #1e293b !important; /* డార్క్ బ్లూ బ్యాక్‌గ్రౌండ్ */
-    border: 1px solid #334155 !important; /* డార్క్ బోర్డర్ */
+  background-color: #1e293b !important;
+  /* డార్క్ బ్లూ బ్యాక్‌గ్రౌండ్ */
+  border: 1px solid #334155 !important;
+  /* డార్క్ బోర్డర్ */
 }
 
 /* ఆ బాక్స్ లోపల ఉన్న టెక్స్ట్ (Matter) కోసం */
 body.dark-theme div[style*="background: rgb(255, 249, 240)"] span,
 body.dark-theme div[style*="background: #fff9f0"] span {
-    color: #ffffff !important; /* తెల్లటి అక్షరాలు */
+  color: #ffffff !important;
+  /* తెల్లటి అక్షరాలు */
 }
+
 /* Dark Theme General Styles */
 body.dark-theme {
   background-color: #1a202c;
-  color:#ffffff;
+  color: #ffffff;
 }
 
+/* ==========================================
+   SHARE MODAL STYLES (REACT PORTAL)
+   ========================================== */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.share-modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+.share-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.share-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.share-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-close-btn:hover {
+  color: #111;
+}
+
+.share-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.share-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.share-icon-btn:hover {
+  transform: translateY(-3px);
+}
+
+.share-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.share-icon-btn span {
+  font-size: 0.75rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.share-copy-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.share-url-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.share-copy-btn {
+  padding: 10px 16px;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.share-copy-btn:hover {
+  background: #162d6b;
+}
+
+.share-copy-btn.copied {
+  background: #10b981;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Dark Mode fixes for Share Modal */
+body.dark-theme .share-modal-content {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+body.dark-theme .share-modal-header {
+  border-bottom-color: #334155;
+}
+
+body.dark-theme .share-modal-header h3 {
+  color: #fff;
+}
+
+body.dark-theme .share-close-btn {
+  color: #cbd5e0;
+}
+
+body.dark-theme .share-close-btn:hover {
+  color: #fff;
+}
+
+body.dark-theme .share-icon-btn span {
+  color: #cbd5e0;
+}
+
+body.dark-theme .share-url-input {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}

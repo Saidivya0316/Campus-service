@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Axios ni install chesko: npm install axios
+import API from '../api'; // ✅ Use shared API instance (uses Vite proxy locally, Nginx on EC2)
 
 const Sell = () => {
   const navigate = useNavigate();
   const [agreed, setAgreed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [product, setProduct] = useState({
     name: '',
@@ -17,11 +18,12 @@ const Sell = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    if (!file) return;
     const reader = new FileReader();
     reader.onloadend = () => {
-      setProduct({ ...product, image: reader.result });
+      setProduct((prev) => ({ ...prev, image: reader.result }));
     };
-    if (file) reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e) => {
@@ -34,25 +36,41 @@ const Sell = () => {
       return;
     }
 
-    const newProduct = { 
-      ...product, 
+    const newProduct = {
+      ...product,
       price: Number(product.price),
       isUserAdded: true,
-      sellerName: loggedInUser.name,     
+      sellerName: loggedInUser.name,
       sellerRoll: loggedInUser.rollNo
     };
 
+    console.log("📦 Submitting product:", newProduct); // Debug log
+
     try {
-      // Backend API call ikkada jarugutundi
-      const response = await axios.post('http://localhost:5000/api/products', newProduct);
-      
+      setLoading(true);
+      // ✅ Uses API instance → routed via Vite proxy (local) or Nginx (EC2)
+      const response = await API.post('/products', newProduct);
+      console.log("✅ Server response:", response.data);
+
       if (response.status === 201 || response.status === 200) {
         alert("Product Added Successfully to Database! 🚀");
         navigate('/products');
       }
     } catch (error) {
-      console.error("Error adding product:", error);
-      alert("Backend connect avvaledu. Check your Server!");
+      console.error("❌ Error adding product:", error);
+      if (error.response) {
+        // Server responded with error status
+        console.error("Status:", error.response.status);
+        console.error("Data:", error.response.data);
+        alert(`Server Error ${error.response.status}: ${error.response.data?.message || 'Unknown error'}`);
+      } else if (error.request) {
+        // Request made but no response (network / CORS / server down)
+        alert("❌ Cannot reach server. Is the backend running? Check port 5000.");
+      } else {
+        alert("❌ Request failed: " + error.message);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -94,11 +112,13 @@ const Sell = () => {
           </label>
         </div>
 
-        <button type="submit" disabled={!agreed} style={{
-          width: '100%', padding: '15px', background: agreed ? '#1E3A8A' : '#ccc',
-          color: 'white', border: 'none', borderRadius: '10px'
+        <button type="submit" disabled={!agreed || loading} style={{
+          width: '100%', padding: '15px',
+          background: agreed && !loading ? '#1E3A8A' : '#ccc',
+          color: 'white', border: 'none', borderRadius: '10px',
+          cursor: agreed && !loading ? 'pointer' : 'not-allowed'
         }}>
-          Post Product 🚀
+          {loading ? 'Posting...' : 'Post Product 🚀'}
         </button>
       </form>
     </div>

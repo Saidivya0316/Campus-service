@@ -40,8 +40,17 @@ const Buy = () => {
 
  useEffect(() => {
   const fetchProducts = async () => {
-    const res = await API.get("/products");
-    setDisplayProducts([...res.data, ...staticProductsList]);
+    try {
+      const res = await API.get("/products");
+      console.log("Fetched API Products:", res.data);
+      // Validate that res.data is an array before spreading
+      const apiProducts = Array.isArray(res.data) ? res.data : [];
+      setDisplayProducts([...apiProducts, ...staticProductsList]);
+    } catch (err) {
+      console.error("Error fetching products:", err);
+      // Fallback to static products if API fails
+      setDisplayProducts(staticProductsList);
+    }
   };
 
   fetchProducts();
@@ -62,15 +71,15 @@ const deleteProduct = async (id) => {
     .filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = activeCategory === "All" || product.category === activeCategory;
-     const matchesCondition = condition === "All" || (product.condition && product.condition.toLowerCase() === condition.toLowerCase());
+     const matchesCondition = condition === "All" || !product.condition || (product.condition && product.condition.toLowerCase() === condition.toLowerCase());
       const matchesPrice = product.price <= priceRange;
       return matchesSearch && matchesCategory && matchesCondition && matchesPrice;
     })
     .sort((a, b) => {
-      if (sortBy === "Price: Low to High") return a.price - b.price;
-      if (sortBy === "Price: High to Low") return b.price - a.price;
-      if (sortBy === "Newest First") return b.id - a.id;
-      if (sortBy === "Oldest First") return a.id - b.id;
+      if (sortBy === "Price: Low to High") return (a.price || 0) - (b.price || 0);
+      if (sortBy === "Price: High to Low") return (b.price || 0) - (a.price || 0);
+      if (sortBy === "Newest First") return (b.id || 9999) - (a.id || 9999);
+      if (sortBy === "Oldest First") return (a.id || 0) - (b.id || 0);
       return 0;
     });
 

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FaHeart, FaRegHeart, FaShareAlt, FaPlus, FaTrash } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; // 1. Navigation kosam import
+import { useNavigate } from 'react-router-dom';
+import ShareModal from './ShareModal';
 
 const ProductCard = ({ product, onDelete }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [currentUserRoll, setCurrentUserRoll] = useState(null);
-  const navigate = useNavigate(); // 2. Navigate initialize
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem('user'));
@@ -16,19 +18,10 @@ const ProductCard = ({ product, onDelete }) => {
     setIsLiked(savedWishlist.some(item => item.id === product.id));
   }, [product.id]);
 
-  // --- NEW: Share Logic ---
-  const handleShare = (e) => {
-    e.stopPropagation(); // Card click trigger avvakunda
-    if (navigator.share) {
-      navigator.share({
-        title: product.name,
-        text: `Check out this ${product.name} on CampusCircle!`,
-        url: window.location.href,
-      }).catch(console.error);
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert("Link copied to clipboard!");
-    }
+  const handleShareClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsShareModalOpen(true);
   };
 
   const toggleWishlist = (e) => {
@@ -77,7 +70,7 @@ const ProductCard = ({ product, onDelete }) => {
           </button>
           
           {/* --- Updated Share Button --- */}
-          <button className="action-btn" onClick={handleShare}>
+          <button className="action-btn" onClick={handleShareClick}>
             <FaShareAlt />
           </button>
           
@@ -123,6 +116,12 @@ const ProductCard = ({ product, onDelete }) => {
           <button className="add-btn" onClick={addToCart}><FaPlus /></button>
         </div>
       </div>
+
+      <ShareModal 
+        isOpen={isShareModalOpen} 
+        onClose={() => setIsShareModalOpen(false)} 
+        product={product} 
+      />
     </div>
   );
 };
